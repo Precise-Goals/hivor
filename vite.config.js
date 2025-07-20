@@ -6,6 +6,11 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     include: ["pdfjs-dist/build/pdf.worker"],
+  }, 
+  build: {
+    rollupOptions: {
+      external: ['pdfjs-dist'],
+    },
   },
   server: {
     proxy: {
